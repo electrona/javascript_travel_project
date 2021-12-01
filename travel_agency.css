@@ -1,3 +1,28 @@
 body {
-    background-color: #227BB8;
+    background-color: #054A80;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1 {
+    color: #A7F4FA;
+}
+
+h2 {
+    color: #A7F4FA;
+}
+
+h3 {
+    color: #A7F4FA;
+}
+
+h4 {
+    color: #A7F4FA;
+}
+
+p {
+    color: #A7F4FA;
 }
