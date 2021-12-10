@@ -99,23 +99,17 @@ p {
   content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
 span {
+  padding-left: 59px;
   display: inline-block;
   width: 10em;
   text-align: justify;
 }
-form{
-  display: table;
-
-
-
-}
-p{
-
-  display: table-row;
-}
 label {
-  display: table-cell;
+  display: inline-block;
+  width: 11em;
+  text-align: right;
 }
-input {
-  display: table-cell;
+input, select {
+  margin-left: 1em;
+  margin-right: 0.5em;
 }

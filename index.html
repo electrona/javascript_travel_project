@@ -165,59 +165,54 @@
       }
     </style>
   </head>
-  <body>
-    <form action="/form/submit" method="post">
-      <p><span>First Input Selection:
-      <div>
-        <label>Name</label>
-        <input type="text" />
-      </div>
-      <div>
-        <label>Passport</label>
-        <input type="text" />
-      </div>
-      <div>
-        <label>Credit Card</label>
-        <input type="text" /></span>
-      </div>
-    </form>
-  </body>
-</html>
-  
-</form>
+  <title>Registration</title>
+    <link rel="stylesheet" href="register.css">
+</head>
+
 <body>
+    <main>
+        <h1>Register for an Account</h1>
+        <form action="confirm.html" method="get">
+            <div>
+              <h3><label for="name">Name:</label>
+                <input type="text" name="name" id="name">
+                <span></span></h3>
+            </div>
+            <div>
+              <h3><label for="passport">Passport:</label>
+                <input type="text" name="passport" maxlength="6" id="passport">
+                <span></span></h3>
+            </div>
+            <div>
+              <h3><label for="creditcard">Credit Card:</label>
+              <input type="text" name="creditcard" maxlength=6 id="creditcard">
+              <span></span></h3>
+          </div>
+            <p></p>
+            <h3><div>
+              <label>Select City:</label>
+                <input type="radio" name="noname" id="noname"
+                    value="text" checked>None
+                <input type="radio" name="citya" id="citya"
+                    value="text">City A
+                <input type="radio" name="cityb" id="cityb"
+                    value="text">City B 
+            </div></h3>
+            <h3><div>
+              <label>Select Transportion:</label>
+              <input type="radio" name="contact" id="text"
+                  value="text" checked>None
+              <input type="radio" name="contact" id="email"
+                  value="text">Train
+              <input type="radio" name="contact" id="none"
+                  value="text">Bus
+          </div></h3>
+            
+            <div>
+                <label>&nbsp;</label>
+                <input type="button" id="process" value="Process">
+                <input type="button" id="reset_form" value="Reset">
+            </div>
 
-  <div class="container">
-    <h2>Second Input Section
-    <form>
-      <div class="container">
-        <p>Select Transportion
-        <label class="radio-inline">
-        <input type="radio" name="optradio" checked>None
-        </label>
-        <label class="radio-inline">
-        <input type="radio" name="optradio">City A
-        </label>
-        <label class="radio-inline">
-        <input type="radio" name="optradio">City B
-        </label>
-    </form>
-  </div>
-
-  <form>
-    <div class="container">
-    <p><span>Transportion</span>
-    <label class="radio-inline">
-    <input type="radio" name="optradio" checked>None
-    </label>
-    <label class="radio-inline">
-    <input type="radio" name="optradio">Train
-    </label>
-    <label class="radio-inline">
-    <input type="radio" name="optradio">Bus
-    </label>
-  </form>
-  
-  </body>
-  
+        </form>
 </form>
