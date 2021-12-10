@@ -23,12 +23,42 @@ for (i = 0; i < coll.length; i++) {
     }
   });
 }
+
+const display = msgs => {
+  // create a new ul element
+  const ul = document.createElement("ul");
+  ul.classList.add("messages");
+
+  // create a new li element for each error message, add to ul
+  for (let msg of msgs) {
+      const li = document.createElement("li");
+      const text = document.createTextNode(msg);
+      li.appendChild(text);
+      ul.appendChild(li);
+  }
+
+  // if ul node isn't in document yet, add it
+  const node = $("ul");
+  if (node == null) {
+      // get the form element 
+      const form = $("form");
+
+      // add ul to parent of form, before the form
+      form.parentNode.insertBefore(ul, form);
+  } else {
+      // replace existing ul node
+      node.parentNode.replaceChild(ul, node);
+  }  
+}
+
+
 const processEntries = () => {
   // get form controls to check for validity
   const name = $("#name");
   const passport = $("#passport");
   const creditcard = $("#creditcard");
-  // document.write(`${name} `);
+  
+  const msgs = []
   
   // check user entries for validity
   let isValid = true;
@@ -36,7 +66,7 @@ const processEntries = () => {
       name.nextElementSibling.textContent = "<span>";
       isValid = false; 
   } else {
-      name.nextElementSibling.textContent = "";
+      msgs[msgs.length] = $(name);
   }
   
 
@@ -47,14 +77,21 @@ const processEntries = () => {
       passport.nextElementSibling.textContent = "<span>";
       isValid = false; 
   } else { 
-      passport.nextElementSibling.textContent = "";
+      msgs[msgs.length] = $(passport);
   }
 
   if (creditcard.value == "") {
       creditcard.nextElementSibling.textContent = "<span>";
       isValid = false; 
   } else { 
-      $("#creditcard").nextElementSibling.textContent = "";
+      msgs[msgs.length] = $(passport);
+  }
+
+  // submit the form or notify user of errors
+  if (msgs.length == 0) {  // no error messages
+    $("form").submit(); 
+  } else {
+    display(msgs);
   }
 
  
@@ -67,17 +104,32 @@ const processEntries = () => {
 
 const resetForm = () => {
   $("form").reset();
-  $("#name").nextElementSibling.textContent = "*";
-  $("#passport").nextElementSibling.textContent = "*";
-  $("#creditcard").nextElementSibling.textContent = "*";	
+  
+  // remove error messages
+  $("ul").remove();
+  
   
 };
 
 document.addEventListener("DOMContentLoaded", () => {
   $("#process").addEventListener("click", processEntries);
-  $("#reset_form").addEventListener("click", resetForm); 
+  $("#reset_form").addEventListener("click", resetForm);  
+     
+});
+
+// const resetForm = () => {
+//   $("form").reset();
+//   $("#name").nextElementSibling.textContent = "*";
+//   $("#passport").nextElementSibling.textContent = "*";
+//   $("#creditcard").nextElementSibling.textContent = "*";	
+  
+// };
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   $("#process").addEventListener("click", processEntries);
+//   $("#reset_form").addEventListener("click", resetForm); 
   
 
     
-});
+// });
         
