@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="travel_agency.css" />
-    <title>The Motley Crew Travel Agency 20018474</title>
+    <title>The Motley Crew Travel Agency</title>
   </head>
   
   <body>
@@ -142,35 +142,28 @@
         <img src="./img/railway.jpg" alt="Avatar" class="image">
         <div class="overlay">Britain Railway</div>
       </div>
-      <!-- does all this from line 146 to 164 need to be in this?  DT -->
-    </p>  
-    <p>
-     
-    </p>
-
-    </p>
-    <form>
-      <html>
-      <head>
-        <style>
-          div {
-            margin-bottom: 10px;
-          }
-          label {
-            display: inline-block;
-            width: 150px;
-            text-align: right;
-          }
-        </style>
-      <!-- </head>
-      <title>Registration</title>  //  I do not think this needs to be here DT
-        <link rel="stylesheet" href="register.css">
-    </head> -->
-    
+      
+       <table> 
+         <tr>
+           <th></th>
+           <th>City A</th>
+           <th>City B</th>
+         </tr>
+         <tr>
+           <td>Train</td>
+           <td>150</td>
+           <td>180</td>
+         </tr>
+         <tr>
+          <td>Bus</td>
+          <td>60</td>
+          <td>80</td>
+        </tr>
+       </table>   
     <body>
         <main>
             <h1>Booking</h1>
-            <form>
+            <form id="form" action="booking.html" method="get">
                 <div>
                   <h3><label for="name">Name:</label>
                     <input type="text" name="name" id="name">
@@ -210,8 +203,9 @@
                     <label>&nbsp;</label>
                     <input type="button" id="process" value="Process">
                     <input type="button" id="reset_form" value="Reset">
+                    <div id="booktrip"></div> 
                 </div>
-    
+                
             </form>
     </form>
     <script src="travel_agency.js"></script>
